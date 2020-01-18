@@ -18,10 +18,27 @@ const styles = StyleSheet.create({
   },
 })
 
+function TextDisplay() {
+  const [text, setText] = useState("");
+  return (
+    <View>
+      <TextInput
+        style={{height: 120, background: "lightblue"}}
+        placeholder="Type here to display text below!"
+        onChangeText={(text) => setText(text)}
+        value={text}
+      />
+      <Text>{text}</Text>
+    </View>
+  )
+}
+
 export default function App() {
   return (
     <View style={{ flex: 1 }}>
-      <View style={[styles.box, styles.firstBox]}/>
+      <View style={[styles.box, styles.firstBox]}>
+        <TextDisplay />
+      </View>
       <View style={[styles.box, styles.secondBox]}/>
       <View style={[styles.box, styles.thirdBox]}/>
     </View>
