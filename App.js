@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
   TouchableNativeFeedback,
   TouchableWithoutFeedback,
-  ScrollView
+  FlatList
 } from "react-native";
 import { render } from "react-dom";
 
@@ -119,15 +119,35 @@ function Touchables() {
   )
 }
 
+const mockData = [
+  {key: "Don"},
+  {key: "Dondon"},
+  {key: "Dondons"},
+  {key: "Donnda"},
+  {key: "DonX"},
+  {key: "DonA"},
+  {key: "DonW"},
+  {key: "DonG"},
+  {key: "Donagagg"},
+  {key: "Donebebe"},
+  {key: "Don"},
+  {key: "Dondsa"},
+  {key: "Donxd"},
+]
+
+function FlatListBasics({ data }) {
+  return <FlatList 
+    data={data}
+    renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+  />
+}
+
 export default function App() {
   return (
-    <ScrollView style={{ flex: 1 }}>
-      <View style={[styles.box, styles.firstBox]}></View>
-        <ButtonBasic />
-        <ButtonBasic />
-        <Touchables />
-      <View style={[styles.box, styles.secondBox]} />
-      <View style={[styles.box, styles.thirdBox]} />
-    </ScrollView>
+    <View style={{ flex: 1 }}>
+      <View style={[styles.box, styles.firstBox]}>
+        <FlatListBasics data={mockData}/>
+      </View>
+    </View>
   );
 }
