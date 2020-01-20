@@ -8,7 +8,8 @@ import {
   TouchableHighlight,
   TouchableOpacity,
   TouchableNativeFeedback,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
+  ScrollView
 } from "react-native";
 import { render } from "react-dom";
 
@@ -120,12 +121,13 @@ function Touchables() {
 
 export default function App() {
   return (
-    <View style={{ flex: 1 }}>
+    <ScrollView style={{ flex: 1 }}>
       <View style={[styles.box, styles.firstBox]}></View>
+        <ButtonBasic />
         <ButtonBasic />
         <Touchables />
       <View style={[styles.box, styles.secondBox]} />
       <View style={[styles.box, styles.thirdBox]} />
-    </View>
+    </ScrollView>
   );
 }
