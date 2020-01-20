@@ -45,7 +45,12 @@ const styles = StyleSheet.create({
     textAlign: "center",
     padding: 20,
     color: "white"
-  }
+  },
+  item: {
+    padding: 10,
+    fontSize: 18,
+    height: 44,
+  },
 });
 
 function TextDisplay() {
